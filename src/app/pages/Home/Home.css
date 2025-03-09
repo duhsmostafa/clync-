@@ -1,0 +1,154 @@
+.HeroSection {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), transparent);
+}
+
+.clyncImage {
+  display: flex;
+  width: 20rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: auto;
+  height: 100vh;
+}
+
+.clyncImage img {
+  width: 30.86769rem;
+  height: 3.73rem;
+  flex-shrink: 0;
+}
+
+.clyncImage p {
+  color: #000;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1rem;
+  letter-spacing: -0.02563rem;
+}
+.randomImagesSmScreen {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.randomImagesSmScreen img {
+  width: 5.96113rem;
+  height: 6.1875rem;
+  flex-shrink: 0;
+  position: absolute;
+  opacity: 0; 
+  animation: fadeIn 1s forwards;
+}
+
+.randomImagesSmScreen.hidden img {
+  opacity: 0 !important;
+  animation: none !important;
+}
+
+.randomImagesSmScreen img.firstAppear {
+  animation-delay: 0s;
+  margin-top: 160%;
+  margin-left: 70%;
+}
+
+.randomImagesSmScreen img.SecAppear {
+  animation-delay: 0.5s;
+  margin-top: 125%;
+  margin-left: 40%;
+}
+
+.randomImagesSmScreen img.thirdAppear {
+  animation-delay: 1s;
+  left: 2%;
+  top: 35%;
+}
+
+.randomImagesSmScreen img.fourtAppear {
+  animation-delay: 1.5s;
+  left: 40%;
+  top: 10%;
+}
+
+.randomImagesSmScreen img.fiveAppear {
+  animation-delay: 2s;
+  left: 75%;
+  top: 25%;
+}
+
+.randomImagesSmScreen img.sixAppear {
+  animation-delay: 2.5s;
+  top: 30%;
+  left: 35%;
+}
+
+.randomImagesSmScreen img.sevenAppear {
+  animation-delay: 3s;
+  left: 20%;
+  top: 85%;
+}
+
+.randomImagesSmScreen img.eightAppear {
+  animation-delay: 3.5s;
+  top: 70%;
+  left: 5%;
+}
+
+.randomImagesSmScreen img.nineAppear {
+  animation-delay: 4s;
+  top: 20%;
+  left: 0%;
+}
+
+.randomImagesSmScreen img.tenAppear {
+  animation-delay: 4.5s;
+  top: 55%;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@media (min-width: 768px) {
+  .randomImagesSmScreen {
+    display: none;
+  }
+.clyncImage{
+  width: 60rem;
+}
+.clyncImage img {
+  width: 70.86769rem;
+  height: 10.73rem;
+}
+.clyncImage p{
+  width: 33.125rem;
+height: 4.4375rem;
+flex-shrink: 0;
+color: #000;
+text-align: center;
+font-family: Inter;
+font-size: 1.4375rem;
+font-style: normal;
+font-weight: 300;
+line-height: 1.375rem;
+letter-spacing: -0.02563rem;
+}
+}

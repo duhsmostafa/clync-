@@ -1,0 +1,175 @@
+/* lg screens start */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 120vw;
+    height: 100%;
+    background-color: #000;
+    color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.5s ease, opacity 0.5s ease; 
+    z-index: 99000;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.side-menu.open {
+    right: 0;
+    opacity: 1; 
+}
+.side-menu .close-menu {
+    transition: transform 0.3s ease;
+    font-size: 50px;
+    color: #00E13F;
+    cursor: pointer;
+}
+.side-menu .close-menu:hover {
+    transform: rotate(90deg);
+}
+.side-menu .menu-content {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.side-menu.open .menu-content {
+    opacity: 1;
+    transform: translateX(0); 
+}
+.side-menu.open {
+    transition: right 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+.headeer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.button-container{
+    width: 90%;
+    margin: auto;
+}
+.side-menu ul li.small-text a {
+    font-size: 16px; 
+}
+.side-menu ul li.different-color a {
+    color: silver; 
+}
+.all-side-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    }
+    .left-content{
+    width: 80%;
+    }
+    .right-content{
+    width: 30%;
+    }
+    .left-content,
+    .right-content {
+    margin-top: 5%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    }
+    .blog-title{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 70%;
+        margin-bottom: 20px;
+    }
+.menu{
+    color: silver;
+    font-size: 20px;
+}
+.help-text , .security-text{
+    color: silver;
+}
+.text-capitalize{
+    font-size: 50px;
+    font-weight: bolder;
+    text-transform: capitalize;
+}
+.end-menu{
+    margin-top: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+.vertical-line-border {
+    height: 100%;
+    border-left: 2px solid white; 
+    margin: 0 auto;
+    }
+    .vertical-line {
+    width: 2px; 
+    height: 70vh; 
+    background-color: white; 
+    margin: 0 5%;
+    }
+.take-part {
+    width: 100%;
+}
+.end-right-content {
+color: silver;
+display: flex;
+gap: 30px;
+justify-content: center;
+padding: 20px; 
+position: fixed;
+bottom: 5%;
+left: 70%;
+right: 0;
+z-index: 1000; 
+width: 30%;
+font-size: 25px;
+}
+.dropdown-links {
+display: none;
+}
+.dropdown-links.open {
+display: block; 
+}
+/* lg screens end */
+
+/* md screens start */
+/* @media only screen and (min-width: 769px) and (max-width: 1280px) {
+.side-menu{
+    background-color: red;
+}
+} */
+/* dm screens start */
+/* sm screens start */
+@media only screen and (max-width: 768px) {
+    .left-content , .vertical-line{
+        visibility: hidden;
+    }
+        .right-content{
+            width: 100%;
+            position: absolute;
+        }
+        .end-right-content{
+            width: 100%;
+            left: 0%;
+            bottom: 0%;
+        }
+        .headeer img{
+            display: none;
+        }
+        .side-menu .close-menu{
+            position: absolute;
+            right: 20px;
+            top: -10%;
+            color: #FFFFFF;
+        }
+        .blog-title{
+            width: 90%;
+        }
+        .menu{
+        margin-bottom: 20px;
+}
+}
+/* sm screens start */
