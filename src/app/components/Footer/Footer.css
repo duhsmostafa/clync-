@@ -238,6 +238,7 @@ transform: rotate(0deg);
     height: 2.51688rem;
     background: #FFF;
 }
+
 @media screen and (max-width: 768px) {
     .takePart{
         color: #FFF;

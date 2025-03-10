@@ -217,6 +217,61 @@
     animation: scaleUp 0.5s ease-in-out forwards;
 }
 
+
+.cardd-3{
+  position: absolute;
+  top: 15%;
+  left: 0;
+}
+.cardd-3 h2{
+align-self: stretch;
+color: #FFF;
+font-family: "SF Pro Display";
+font-size: 3rem;
+font-style: normal;
+font-weight: 700;
+line-height: 3.25rem; /* 108.333% */
+}
+.cardd-3 p{
+  color: #CCCBCB;
+font-family: Montserrat;
+font-size: 0.875rem;
+font-style: normal;
+font-weight: 500;
+line-height: 1.25rem; /* 142.857% */
+letter-spacing: -0.02563rem;
+width: 60%;
+}
+.BoyCard{
+  position: absolute;
+  width: 100%;
+  top: 20%;
+  right: 0;
+  bottom: 0;
+}
+.bubles{
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  width: 40%;
+}
+    .cardOneImages2{
+      position: absolute;
+      top: 0;
+      display: flex;
+      gap: 30px ;
+      justify-content: center;
+    }
+.bg01 , .bg02{
+  display: none;
+}
+.bg03{
+  margin-top: -90%;
+  margin-left: 10%;
+}
+.bg04{
+  margin-top: -70%;
+}
 @media (min-width: 768px) {
     #card-2 {
         margin-top: 60% !important;
@@ -367,6 +422,65 @@
         left: 45%;
         width: 9rem;
     }
+    .cardOneImages2{
+      position: absolute;
+      top: 0;
+      display: flex;
+      gap: 17px ;
+    }
+    .bg01{
+      margin-top: -45% ;
+      margin-left: 10px;
+      display: block;
+    }
+    .bg02{
+      margin-top: -35%;
+      display: block;
+    }
+    .bg03{
+      margin-top: -30%;
+      margin-left: 0%;
+    }
+    .bg04{
+      margin-top: -18%;
+    }
+
+    .cardd-3{
+  position: absolute;
+  top: 35%;
+  left: 0;
+  margin-left: 5%;
+}
+    .cardd-3 h2{
+      width: 34.75rem;
+      color: #FFF;
+      font-family: var(--font-inter), Arial, sans-serif; /* Replaced SF Pro Display with Inter */
+font-size: 8.62rem;
+font-style: normal;
+font-weight: 700;
+line-height: 8.56875rem; 
+letter-spacing: -0.04388rem;
+    }
+
+    .cardd-3 p{
+      width: 29.0625rem;
+height: 4.25rem;
+flex-shrink: 0;
+color: #CCCBCB;
+font-family: Inter;
+font-size: 1.4375rem;
+font-style: normal;
+font-weight: 300;
+line-height: 1.375rem;
+letter-spacing: -0.02563rem;
+    }
+    .BoyCard{
+  position: absolute;
+  width: 100%;
+  top: 20%;
+  right: -20%;
+  bottom: 0;
+}
 }
 
 @media (min-width: 1480px) {

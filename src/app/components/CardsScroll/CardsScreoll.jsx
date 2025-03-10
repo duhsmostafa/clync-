@@ -18,10 +18,13 @@ import box4V4Image from '../../assets/box4V4.svg';
 import box5V4Image from '../../assets/add-pocket.svg';
 import webChatting from '../../assets/Web_Chatting (1).svg';
 import chattingBubles from '../../assets/Web_ChatBubbles.svg';
+
 export default function CardScroll() {
     const [isCard4InView, setIsCard4InView] = useState(false);
     const [isCard5InView, setIsCard5InView] = useState(false);
     const [isCard2InView, setIsCard2InView] = useState(false);
+    const [isSecondVisible, setIsSecondVisible] = useState(false);
+
     // Sticky positioning and scroll effects for all cards
     useEffect(() => {
         const cards = $('.card');
@@ -102,6 +105,7 @@ export default function CardScroll() {
             $(window).off('scroll');
         };
     }, []);
+
     // Scroll detection for card-2, trigger when top is at 0 with 1-second delay
     useEffect(() => {
         const handleScroll = () => {
@@ -110,56 +114,10 @@ export default function CardScroll() {
                 const card2Top = card2.getBoundingClientRect().top;
                 if (Math.abs(card2Top) < 5) {
                     setTimeout(() => {
-                        setIsCard2InView(true);
+                        setIsSecondVisible(true); // Show the second div
                     }, 1000);
                 } else {
-                    setIsCard2InView(false);
-                }
-            }
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
-    // Card-4 scroll detection
-    useEffect(() => {
-        const handleScroll = () => {
-            const card4 = document.getElementById('card-4');
-            if (card4) {
-                const card4Top = card4.getBoundingClientRect().top;
-                const card4Bottom = card4.getBoundingClientRect().bottom;
-                const windowHeight = window.innerHeight;
-
-                if (card4Top < windowHeight && card4Bottom > 0) {
-                    setIsCard4InView(true);
-                } else {
-                    setIsCard4InView(false);
-                }
-            }
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
-    // Card-5 scroll detection with 2-second delay
-    useEffect(() => {
-        const handleScroll = () => {
-            const card5 = document.getElementById('card-5');
-            if (card5) {
-                const card5Top = card5.getBoundingClientRect().top;
-                const card5Bottom = card5.getBoundingClientRect().bottom;
-                const windowHeight = window.innerHeight;
-
-                if (card5Top < windowHeight && card5Bottom > 0) {
-                    setTimeout(() => {
-                        setIsCard5InView(true);
-                    }, 2000);
-                } else {
-                    setIsCard5InView(false);
+                    setIsSecondVisible(false); // Hide the second div
                 }
             }
         };
@@ -173,25 +131,36 @@ export default function CardScroll() {
     return (
         <main>
             {/* Card-2 */}
-            <div id="card-2" className="card any m-auto">
+            <div id="card-2" className="card first any m-auto">
                 <div className="row g-0">
-                    <div className="card-body cardOneImages">
+                    {/* First Div: Visible by default, hidden when scrolling */}
+                    <div className={`card-body cardOneImages ${isSecondVisible ? 'd-none' : ''}`}>
                         <Image src={card1img1} className="image-spacing bg1" alt="Rectangle 19861" />
                         <Image src={card1img2} className="image-spacing bg2" alt="Rectangle 19862" />
                         <Image src={card1img3} className="image-spacing bg3" alt="Rectangle 19863" />
                         <Image src={card1img4} className="image-spacing bg4" alt="Rectangle 19864" />
                     </div>
-                    <div className={`row g-0 card3 ${isCard2InView ? '' : 'd-none'}`}>
+
+                    {/* Second Div: Hidden by default, visible when scrolling */}
+                    <div className={`row g-0 card3 second ${isSecondVisible ? '' : 'd-none'}`}>
                         <div className="col-md-8">
-                            <div className="card-body card-3">
-                                <h2>Chit, <br />Chat,<br />Done.</h2>
-                                <p>Stay in the loop with your people. 
-                                Spill the tea, host events, and keep the convo rolling without ever losing the vibe.</p>
+                            <div className="card-body cardOneImages2">
+                                <Image src={card1img1} className="image-spacing bg01" alt="Rectangle 19861" />
+                                <Image src={card1img2} className="image-spacing bg02" alt="Rectangle 19862" />
+                                <Image src={card1img3} className="image-spacing bg03" alt="Rectangle 19863" />
+                                <Image src={card1img4} className="image-spacing bg04" alt="Rectangle 19864" />
+                            </div>
+                            <div className="cardd3">
+                                <div className="card-body cardd-3">
+                                    <h2>Chit, <br />Chat,<br />Done.</h2>
+                                    <p>Stay in the loop with your people.
+                                        Spill the tea, host events, and keep the convo rolling without ever losing the vibe.</p>
+                                </div>
                             </div>
                         </div>
                         <div className="col-md-2 col-image3">
                             <div className="card3SplitBillImage">
-                                <Image src={webChatting} className="image3" alt="Rectangle 19884" />
+                                <Image src={webChatting} className="BoyCard" alt="Rectangle 19884" />
                                 <Image src={chattingBubles} className="bubles" alt="Rectangle 19884" />
                             </div>
                         </div>
