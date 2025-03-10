@@ -30,8 +30,6 @@
         transform: translateX(-100%);
     }
 }
-
-/* Optional: Gradient fade effect */
 .takePart::before,
 .takePart::after {
     content: '';
@@ -51,8 +49,6 @@
     right: 0;
     background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
-
-
 .footer {
     background-color: #000;
     position: relative;
@@ -60,7 +56,6 @@
     overflow-x: clip;
     margin-top: 5%;
 }
-
 .wave {
     height: 16.5rem;
     flex-shrink: 0;
@@ -74,19 +69,19 @@
     height: 3.12175rem;
     flex-shrink: 0;
 }
-
 .needHelp h3,
 .sfety h3 {
-    width: 7.5625rem;
+    width: 8.5625rem;
     height: 1.625rem;
     flex-shrink: 0;
     color: #FFF;
-    font-family: Figtree;
+    font-family: Montserrat;
     font-size: 1.375rem;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
 }
+
 
 .needHelp p,
 .sfety p {
@@ -105,18 +100,15 @@
     justify-content: space-between;
     margin-top: 5%;
 }
-
 .leftContent,
 .rightContent {
     width: 50%;
 }
-
 .innerFooter {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 .utpp {
     width: 7.68725rem;
     height: 3.68406rem;
@@ -209,7 +201,6 @@ transform: rotate(0deg);
     flex-direction: column;
     width: 33%;
 }
-
 .right h3,
 .mid h3,
 .left h3 {
@@ -224,7 +215,6 @@ transform: rotate(0deg);
     line-height: normal;
     margin-bottom: 10px;
 }
-
 .mid p {
     color: #FAFAFA;
     font-family: Figtree;
@@ -234,24 +224,20 @@ transform: rotate(0deg);
     line-height: 2rem;
     margin: 0; 
 }
-
 .icons {
     display: flex;
     gap: 2rem;
     align-items: center; 
 }
-
 .icons i {
     font-size: 1.5rem;
     color: #fff;
 }
-
 .horzontal-line {
     width: 0.0265rem;
     height: 2.51688rem;
     background: #FFF;
 }
-
 @media screen and (max-width: 768px) {
     .takePart{
         color: #FFF;
@@ -311,7 +297,7 @@ margin-bottom: 10%;
     width: 5.75rem;
 height: 2.5rem;
 color: #000;
-font-family: Mokoko;
+font-family: "Mokoko";
 font-size: 1.96875rem;
 font-style: normal;
 font-weight: 700;

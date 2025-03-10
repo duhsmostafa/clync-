@@ -18,12 +18,10 @@ import box4V4Image from '../../assets/box4V4.svg';
 import box5V4Image from '../../assets/add-pocket.svg';
 import webChatting from '../../assets/Web_Chatting (1).svg';
 import chattingBubles from '../../assets/Web_ChatBubbles.svg';
-
 export default function CardScroll() {
     const [isCard4InView, setIsCard4InView] = useState(false);
     const [isCard5InView, setIsCard5InView] = useState(false);
     const [isCard2InView, setIsCard2InView] = useState(false);
-
     // Sticky positioning and scroll effects for all cards
     useEffect(() => {
         const cards = $('.card');
@@ -104,7 +102,6 @@ export default function CardScroll() {
             $(window).off('scroll');
         };
     }, []);
-
     // Scroll detection for card-2, trigger when top is at 0 with 1-second delay
     useEffect(() => {
         const handleScroll = () => {
@@ -120,7 +117,6 @@ export default function CardScroll() {
                 }
             }
         };
-
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
@@ -190,7 +186,7 @@ export default function CardScroll() {
                             <div className="card-body card-3">
                                 <h2>Chit, <br />Chat,<br />Done.</h2>
                                 <p>Stay in the loop with your people. 
-Spill the tea, host events, and keep the convo rolling without ever losing the vibe.</p>
+                                Spill the tea, host events, and keep the convo rolling without ever losing the vibe.</p>
                             </div>
                         </div>
                         <div className="col-md-2 col-image3">
