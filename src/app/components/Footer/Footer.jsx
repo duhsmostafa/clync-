@@ -14,6 +14,11 @@ export default function Footer() {
                 <div className='takePart'>
                     <p>take part  take part  take part  take part  take part  take part take part  take part  take part  take part  take part  take part take part  take part  take part  take part  take part  take part </p>
                 </div>
+                <div className='waveMobile'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="700" height="269" viewBox="0 0 1920 269" fill="none">
+  <path d="M1 13.7057C81.5522 -0.664966 252.353 7.35186 291.139 154.384C384.476 96.4721 615.18 29.3812 791.302 224.315C809.334 212.174 862.758 193.92 932.2 218.035C1004.75 151.466 1188.33 62.2888 1342.31 238.131C1380.47 260.74 1473.9 290.884 1542.34 230.595C1565.4 157.328 1670.91 24.1059 1908.42 77.3611C1908.42 59.3582 1910.94 19.0818 1921 2" stroke="white" strokeWidth="6"/>
+</svg>
+                </div>
                 <div className='wave'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="269" viewBox="0 0 1920 269" fill="none">
   <path d="M1 13.7057C81.5522 -0.664966 252.353 7.35186 291.139 154.384C384.476 96.4721 615.18 29.3812 791.302 224.315C809.334 212.174 862.758 193.92 932.2 218.035C1004.75 151.466 1188.33 62.2888 1342.31 238.131C1380.47 260.74 1473.9 290.884 1542.34 230.595C1565.4 157.328 1670.91 24.1059 1908.42 77.3611C1908.42 59.3582 1910.94 19.0818 1921 2" stroke="white" strokeWidth="6"/>
@@ -82,7 +87,10 @@ export default function Footer() {
                             <i className="bi bi-apple"></i>
                         </div>
                     </div>
-                    </div>
+                </div>
+                <div className='copyRights'>
+                    <p>© 2025 Clync. All rights reserved.</p>
+                </div>
             </div>
       </footer>
     );

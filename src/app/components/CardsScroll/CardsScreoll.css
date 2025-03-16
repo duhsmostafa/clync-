@@ -1,7 +1,7 @@
 /* =================cards===================== */
 .bottomImage {
     position: fixed;
-    bottom: 0;
+    bottom: 5%;
     left: 0;
     width: 100%;
     z-index: 9999;
@@ -31,9 +31,10 @@
 .cardOneImages {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     overflow: hidden;
+    gap: 20px;
 }
 
 .image-spacing {
@@ -68,7 +69,7 @@
 
 .card-3 p, .card-4 p {
     color: #CCCBCB;
-    font-family: var(--font-montserrat), Helvetica, sans-serif; /* Already Montserrat */
+    font-family: var(--font-montserrat), Helvetica, sans-serif;
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 500;
@@ -76,20 +77,22 @@
     letter-spacing: -0.02563rem;
     width: 80%;
 }
-
 .image4 {
-    width: 8.69331rem;
-    height: 36.75288rem;
+    width: 10.69331rem;
+    height: 45.75288rem;
     flex-shrink: 0;
-    aspect-ratio: 139.09/556.05;
+    aspect-ratio: 139.09 / 556.05;
     position: absolute;
-    top: -40px;
+    top: -10%;
     right: 0;
+    transform: rotate(3deg);
     margin-top: -40px;
+    transition: margin-top 0.1s ease-out;
 }
 
 .image4.animate {
-    animation: dropDownAndUp 2s ease-in-out;
+    animation: dropDownAndUp 0.8s ease-in-out forwards;
+    animation-delay: 0.1s; 
 }
 
 @keyframes dropDownAndUp {
@@ -97,7 +100,7 @@
         margin-top: -40px;
     }
     50% {
-        margin-top: 20px;
+        margin-top: 30px;
     }
     100% {
         margin-top: -40px;
@@ -105,11 +108,11 @@
 }
 
 .Duckimage4 {
-    width: 22.5625rem;
-    height: 11.125rem;
+    width: 25.5625rem;
+    height: 8.125rem;
     flex-shrink: 0;
     position: absolute;
-    bottom: 30px;
+    bottom: 0px;
     right: 10px;
 }
 
@@ -150,7 +153,9 @@
 .redBox {
     margin-top: -40%;
     margin-left: 10%;
+
 }
+
 
 /* Animation for the boxes */
 @keyframes slideInFromLeft {
@@ -230,7 +235,7 @@ font-family: "SF Pro Display";
 font-size: 3rem;
 font-style: normal;
 font-weight: 700;
-line-height: 3.25rem; /* 108.333% */
+line-height: 3.25rem;
 }
 .cardd-3 p{
   color: #CCCBCB;
@@ -238,17 +243,29 @@ font-family: Montserrat;
 font-size: 0.875rem;
 font-style: normal;
 font-weight: 500;
-line-height: 1.25rem; /* 142.857% */
+line-height: 1.25rem;
 letter-spacing: -0.02563rem;
 width: 60%;
 }
-.BoyCard{
-  position: absolute;
-  width: 100%;
-  top: 20%;
-  right: 0;
-  bottom: 0;
+.BoyCard {
+    position: absolute;
+    width: 100%;
+    top: 20%;
+    right: -100%; 
+    bottom: 0;
+    animation: slideIn 1s ease-in-out forwards;
+    animation-delay: 0;
 }
+
+@keyframes slideIn {
+    from {
+        right: -100%;
+    }
+    to {
+        right: -5%; 
+    }
+}
+
 .bubles{
   position: absolute;
   top: 15%;
@@ -256,11 +273,12 @@ width: 60%;
   width: 40%;
 }
     .cardOneImages2{
-      position: absolute;
-      top: 0;
-      display: flex;
-      gap: 30px ;
-      justify-content: center;
+    position: absolute;
+    top: 0;
+    display: flex;
+    gap: 30px ;
+    justify-content: center;
+    gap: 15px;
     }
 .bg01 , .bg02{
   display: none;
@@ -272,14 +290,54 @@ width: 60%;
 .bg04{
   margin-top: -70%;
 }
-@media (min-width: 768px) {
+.largeScreen{
+    display: block;
+}
+
+ .yellowBox {
+        margin-top: 0%;
+        margin-left: 0%;
+    }
+        .addPocket {
+        margin-top: 0%;
+        margin-left: -10%;
+    }
+        .boxsImage3 {
+        height: 7rem;
+        position: absolute;
+        right: 30px;
+        top: 80%;
+        z-index: 100000000;
+    }
+        .boxsImage4 {
+        position: absolute;
+        right: 10px;
+        top: 62%;
+        width: 4rem;
+    }
+        .redBox {
+            position: absolute;
+            width: 5rem;
+        margin-top: 67%;
+        margin-left: -40%;
+    } 
+
+
+
+@media (min-width: 360px) and (max-width: 380px) {
+        .redBox {
+        margin-top: 75%;    
+        margin-left: -40%;
+    }
+}
+@media (min-width: 768px)  {
     #card-2 {
         margin-top: 60% !important;
     }
 
     #card-2, #card-3, #card-4, #card-5 {
         width: 75.375rem !important;
-        height: 45.75rem;
+        height: 40.75rem;
         flex-shrink: 0;
         border-radius: 3.75rem;
         border: 1px solid rgba(255, 255, 255, 0.60);
@@ -301,60 +359,47 @@ width: 60%;
     }
 
     .image3 {
-        width: 58.75rem;
+        width: 30.75rem;
         height: 38.5rem;
         flex-shrink: 0;
-        right: -14%;
-        top: 30px;
+        right: 0%;
+        top: 0px;
     }
 
-    .card-3 h2 {
-        width: 50rem;
-        height: 27.5rem;
+    .card-3 h2 , .card-4 h2  , .cardd-3 h2{
+        width:30rem;
+        height: fit-content;
         flex-shrink: 0;
         color: #FFF;
-        font-family: var(--font-inter), Arial, sans-serif; /* Replaced SF Pro Display with Inter */
-        font-size: 8.62rem;
+        font-family: var(--font-inter), Arial, sans-serif;
+        font-size: 5.62rem;
         font-style: normal;
         font-weight: 700;
-        line-height: 9.44375rem; /* 109.556% */
+        line-height: 5.44375rem;
         letter-spacing: -0.04388rem;
     }
 
-    .card-3 p, .card-4 p {
+    .card-3 p, .card-4 p , .cardd-3 p {
         width: 32.875rem;
-        height: 3.875rem;
+        height: 6.875rem;
         flex-shrink: 0;
         color: #CCCBCB;
-        font-family: var(--font-inter), Arial, sans-serif; /* Replaced Montserrat with Inter for consistency */
+        font-family: var(--font-inter), Arial, sans-serif;
         font-size: 1.4375rem;
         font-style: normal;
         font-weight: 300;
         line-height: 1.375rem; /* 95.652% */
         letter-spacing: -0.02563rem;
+
     }
 
     #card-3 {
         background: radial-gradient(101.97% 89.91% at 100% 0%, #2E8D1E 0%, rgba(0, 0, 0, 0) 100%);
         background-color: black;
     }
-
-    .card-4 h2 {
-        width: 41.3125rem;
-        height: 22.625rem;
-        flex-shrink: 0;
-        color: #FFF;
-        font-family: var(--font-inter), Arial, sans-serif; /* Already Inter */
-        font-size: 7.62rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 6rem;
-        letter-spacing: -0.04388rem;
-    }
-
     .image4 {
-        width: 14.6875rem;
-        height: 38.75rem;
+        width: 10.6875rem;
+        height: 25.75rem;
         flex-shrink: 0;
         top: -20%;
         right: 15%;
@@ -369,8 +414,8 @@ width: 60%;
     }
 
     .girlImage {
-        width: 40.05313rem;
-        height: 45.0625rem;
+        width: 30.05313rem;
+        height: 35.0625rem;
         flex-shrink: 0;
         top: 53%;
         left: 75%;
@@ -390,37 +435,43 @@ width: 60%;
     }
 
     .yellowBox {
-        margin-top: -20%;
-        margin-left: -10%;
+        margin-top: -10%;
+        margin-left: 25%;
+        width: 8rem !important;
     }
 
     .addPocket {
-        margin-top: -35%;
+        margin-top: -95%;
+        margin-left: 90%;
     }
 
     .redBox {
-        height: 17rem;
-        padding-top: 20%;
+        height: 7rem;
+        padding-top: 0;
+        margin-top: 10%;
+        margin-left: 13%;
     }
 
     .boxsImage3 {
         height: 8rem;
         position: absolute;
-        right: -40px;
+        right: -30px;
         top: 40%;
     }
 
     .boxsImage4 {
+        
         position: absolute;
         right: 5%;
-        top: 70%;
+        top: 65%;
         z-index: 100000000000000;
     }
 
     .bubles {
         position: absolute;
-        left: 45%;
-        width: 9rem;
+        left: 40%;
+        width: 12rem;
+        top: 40%;
     }
     .cardOneImages2{
       position: absolute;
@@ -428,58 +479,121 @@ width: 60%;
       display: flex;
       gap: 17px ;
     }
-    .bg01{
-      margin-top: -45% ;
-      margin-left: 10px;
-      display: block;
-    }
-    .bg02{
-      margin-top: -35%;
-      display: block;
-    }
-    .bg03{
-      margin-top: -30%;
-      margin-left: 0%;
-    }
-    .bg04{
-      margin-top: -18%;
-    }
 
+.bg01 {
+    margin-top: 0%;
+    margin-left: 0px;
+    display: block;
+    animation: moveToPosition 1s forwards;
+    animation-delay: 1s;
+}
+
+@keyframes moveToPosition {
+    from {
+        margin-top: 0%;
+        margin-left: 0px;
+    }
+    to {
+        margin-top: -45%;
+        margin-left: 10px;
+    }
+}
+
+.bg02 {
+    margin-top: 0%;
+    display: block;
+    animation: moveToPosition2 1s forwards;
+    animation-delay: 1.5s;
+}
+
+@keyframes moveToPosition2 {
+    from {
+        margin-top: 0%;
+    }
+    to {
+        margin-top: -35%;
+    }
+}
+
+.bg03 {
+    margin-top: 0%;
+    margin-left: 0%;
+    display: block;
+    animation: moveToPosition3 1s forwards;
+    animation-delay: 2s;
+}
+
+@keyframes moveToPosition3 {
+    from {
+        margin-top: 0%;
+        margin-left: 0%;
+    }
+    to {
+        margin-top: -30%;
+        margin-left: 0%;
+    }
+}
+
+.bg04 {
+    margin-top: 0%;
+    display: block;
+    animation: moveToPosition4 1s forwards;
+    animation-delay: 2.5s;
+}
+
+@keyframes moveToPosition4 {
+    from {
+        margin-top: 0%;
+    }
+    to {
+        margin-top: -18%;
+    }
+}
     .cardd-3{
   position: absolute;
   top: 35%;
   left: 0;
   margin-left: 5%;
 }
-    .cardd-3 h2{
-      width: 34.75rem;
-      color: #FFF;
-      font-family: var(--font-inter), Arial, sans-serif; /* Replaced SF Pro Display with Inter */
-font-size: 8.62rem;
-font-style: normal;
-font-weight: 700;
-line-height: 8.56875rem; 
-letter-spacing: -0.04388rem;
-    }
 
-    .cardd-3 p{
-      width: 29.0625rem;
-height: 4.25rem;
-flex-shrink: 0;
-color: #CCCBCB;
-font-family: Inter;
-font-size: 1.4375rem;
-font-style: normal;
-font-weight: 300;
-line-height: 1.375rem;
-letter-spacing: -0.02563rem;
+.BoyCard {
+    position: absolute;
+    width: 50%;
+    top: 0%;
+    right: -100%; 
+    bottom: 0;
+    animation: slideIn 3s ease-in-out forwards;
+    animation-delay: 2s;
+}
+
+@keyframes slideIn {
+    from {
+        right: -100%;
     }
-    .BoyCard{
-  position: absolute;
-  width: 100%;
-  top: 20%;
-  right: -20%;
-  bottom: 0;
+    to {
+        right: 0%; 
+    }
+}
+
+    .innerCard3Sec , .card3ImagesSec{
+    opacity: 0;
+    visibility: hidden;
+    animation: showSecondDiv 0.5s forwards;
+    animation-delay: 4s;
+}
+
+@keyframes showSecondDiv {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+.largeScreen{
+    display: none;
 }
 }
 
@@ -488,28 +602,67 @@ letter-spacing: -0.02563rem;
         width: 95rem !important;
         height: 56.75rem;
         flex-shrink: 0;
-    }
+        align-items:center;
 
+    }
     .image-spacing {
         width: 22rem;
         height: 50.5rem;
         flex-shrink: 0;
     }
 
+.card-3 h2 , .card-4 h2 , .cardd-3 h2{
+    margin-top: 50%;
+    width: 36.75rem;
+    color: #FFF;
+font-family: "SF Pro Display";
+font-size: 8.62rem;
+font-style: normal;
+font-weight: 700;
+line-height: 7.56875rem; /* 87.805% */
+letter-spacing: -0.04388rem;
+}
+.cardd-3 h2{
+    margin-top: 0%;
+}
+.card-3 p, .card-4 p , .cardd-3 p{
+    width: 33.0625rem;
+height: 2.25rem;
+flex-shrink: 0;
+color: #CCCBCB;
+font-family: Inter;
+font-size: 1.4375rem;
+font-style: normal;
+font-weight: 300;
+line-height: 2.375rem; /* 95.652% */
+letter-spacing: -0.02563rem;
+}
     .image3 {
-        width: 62.40375rem;
-        height: 45.53969rem;
+width: 58.75rem;
+height: 52.5rem;
+flex-shrink: 0;
         flex-shrink: 0;
-        right: -10%;
+        right: -5%;
         margin-top: 5%;
     }
-
+.image4 {
+width: 14.6875rem;
+height: 50.75rem;
+flex-shrink: 0;
+    }
     .Duckimage4 {
         width: 66.25rem;
         height: 21.0625rem;
         flex-shrink: 0;
         right: 0%;
     }
+
+.BoyCard {
+width: 53.375rem;
+height: 50.875rem;
+flex-shrink: 0;
+top: 20%;
+}
 
     .girlImage {
         width: 45.05313rem;
@@ -524,24 +677,26 @@ letter-spacing: -0.02563rem;
     }
 
     .yellowBox {
-        margin-top: -40%;
-        margin-left: 10%;
+        margin-top: -50%;
+        margin-left: 25%;
     }
 
     .addPocket {
-        margin-top: -95%;
-        margin-left: 85%;
+        margin-top: -110%;
+        margin-left: 110%;
     }
 
     .redBox {
-        margin-left: 30%;
+        margin-left: 16%;
         padding-top: 0;
         height: 10rem;
-        margin-top: -55%;
+        margin-top: 3%;
     }
 
     .boxsImage3 {
         right: 5px !important;
         height: 10rem;
     }
+
+
 }

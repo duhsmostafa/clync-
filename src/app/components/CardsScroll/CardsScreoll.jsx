@@ -18,12 +18,14 @@ import box4V4Image from '../../assets/box4V4.svg';
 import box5V4Image from '../../assets/add-pocket.svg';
 import webChatting from '../../assets/Web_Chatting (1).svg';
 import chattingBubles from '../../assets/Web_ChatBubbles.svg';
+import image4Mobile from '../../assets/image4Mobile.svg'
 
 export default function CardScroll() {
     const [isCard4InView, setIsCard4InView] = useState(false);
     const [isCard5InView, setIsCard5InView] = useState(false);
     const [isCard2InView, setIsCard2InView] = useState(false);
     const [isSecondVisible, setIsSecondVisible] = useState(false);
+    
 
     // Sticky positioning and scroll effects for all cards
     useEffect(() => {
@@ -107,26 +109,109 @@ export default function CardScroll() {
     }, []);
 
     // Scroll detection for card-2, trigger when top is at 0 with 1-second delay
-    useEffect(() => {
+useEffect(() => {
+    const animationTimeout = setTimeout(() => {
         const handleScroll = () => {
             const card2 = document.getElementById('card-2');
             if (card2) {
                 const card2Top = card2.getBoundingClientRect().top;
                 if (Math.abs(card2Top) < 5) {
                     setTimeout(() => {
-                        setIsSecondVisible(true); // Show the second div
-                    }, 1000);
+                        setIsSecondVisible(true);
+                    }, 3000);
                 } else {
-                    setIsSecondVisible(false); // Hide the second div
+                    setIsSecondVisible(false);
                 }
             }
         };
-
         window.addEventListener('scroll', handleScroll);
+
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    }, 3000);
+
+    return () => {
+        clearTimeout(animationTimeout);
+    };
+}, []);
+    
+
+    // Card-4 scroll detection
+useEffect(() => {
+    let timeoutId;
+    const handleScroll = () => {
+        const card4 = document.getElementById('card-4');
+        if (card4) {
+            const card4Top = card4.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            const triggerPoint = windowHeight * 0.8;
+            clearTimeout(timeoutId);
+            if (card4Top < triggerPoint) {
+                timeoutId = setTimeout(() => {
+                    setIsCard4InView(true);
+                }, 100);
+            } else {
+                setIsCard4InView(false);
+            }
+        }
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => {
+        window.removeEventListener('scroll', handleScroll);
+        clearTimeout(timeoutId);
+    };
+}, []);
+
+        // Card-5 scroll detection with 2-second delay
+        useEffect(() => {
+            const handleScroll = () => {
+                const card5 = document.getElementById('card-5');
+                if (card5) {
+                    const card5Top = card5.getBoundingClientRect().top;
+                    const card5Bottom = card5.getBoundingClientRect().bottom;
+                    const windowHeight = window.innerHeight;
+
+                    if (card5Top < windowHeight && card5Bottom > 0) {
+                        setTimeout(() => {
+                            setIsCard5InView(true);
+                        }, 2000);
+                    } else {
+                        setIsCard5InView(false);
+                    }
+                }
+            };
+
+            window.addEventListener('scroll', handleScroll);
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+            };
+        }, []);
+
+
+
+        useEffect(() => {
+            const handleScroll = () => {
+                const card2 = document.getElementById('card-2');
+                if (card2) {
+                    const card2Top = card2.getBoundingClientRect().top;
+                    if (Math.abs(card2Top) < 5) {
+                        setTimeout(() => {
+                            setIsSecondVisible(true); // Show the second div
+                        }, 1000);
+                    } else {
+                        setIsSecondVisible(false); // Hide the second div
+                    }
+                }
+            };
+
+            window.addEventListener('scroll', handleScroll);
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+            };
+        }, []);
+
 
     return (
         <main>
@@ -150,7 +235,8 @@ export default function CardScroll() {
                                 <Image src={card1img3} className="image-spacing bg03" alt="Rectangle 19863" />
                                 <Image src={card1img4} className="image-spacing bg04" alt="Rectangle 19864" />
                             </div>
-                            <div className="cardd3">
+                            <div className='innerCard3Sec'>
+                                                            <div className="cardd3">
                                 <div className="card-body cardd-3">
                                     <h2>Chit, <br />Chat,<br />Done.</h2>
                                     <p>Stay in the loop with your people.
@@ -159,11 +245,12 @@ export default function CardScroll() {
                             </div>
                         </div>
                         <div className="col-md-2 col-image3">
-                            <div className="card3SplitBillImage">
+                            <div className="card3SplitBillImage card3ImagesSec">
                                 <Image src={webChatting} className="BoyCard" alt="Rectangle 19884" />
                                 <Image src={chattingBubles} className="bubles" alt="Rectangle 19884" />
                             </div>
                         </div>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -191,7 +278,7 @@ export default function CardScroll() {
                     <div className="col-md-8">
                         <div className="card-body card-4">
                             <h2>For Both<br />the Sleek <br />& Savage</h2>
-                            <p>Forget the awkward math and endless back and forth, split checks and bills in seconds. Our split bill keeps the fun flowing with no calculators or drama.</p>
+                            <p>Spend smarter and flex harder with a prepaid card designed to match your style. Spend it, swipe it, and flex it wherever you go.</p>
                         </div>
                     </div>
                     <div className="col-md-4 col-image3">
@@ -223,7 +310,8 @@ export default function CardScroll() {
                                 <Image src={box2V4Image} className="yellowBox card5Images" alt="Rectangle 19884" />
                                 <Image src={box5V4Image} className="addPocket card5Images" alt="Rectangle 19884" />
                                 <Image src={box1V4Image} className="redBox card5Images" alt="Rectangle 19884" />
-                                <Image src={box4V4Image} className="boxsImage4 card5Images" alt="Rectangle 19884" />
+                                <Image src={box4V4Image} className="boxsImage4  card5Images" alt="Rectangle 19884" />
+                                <Image src={image4Mobile} className="boxsImage4 largeScreen card5Images" alt="Rectangle 19884" />
                                 <Image src={box3V4Image} className="boxsImage3 card5Images" alt="Rectangle 19884" />
                             </div>
                         </div>

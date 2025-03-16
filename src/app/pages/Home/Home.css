@@ -6,7 +6,6 @@
   height: 100%;
   background: linear-gradient(to top, rgba(0, 0, 0, 0), transparent);
 }
-
 .clyncImage {
   display: flex;
   width: 20rem;
@@ -27,7 +26,7 @@
 .clyncImage p {
   color: #000;
   text-align: center;
-  font-family: var(--font-montserrat), Helvetica, sans-serif; /* Already Montserrat */
+  font-family: var(--font-montserrat), Helvetica, sans-serif;
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 500;
@@ -129,21 +128,27 @@
   }
 }
 
+.bottomImage {
+  transition: opacity 0s ease-in-out;
+}
+
+.bottomImage.hidden {
+  opacity: 0;
+}
+
 @media (min-width: 768px) {
-  .randomImagesSmScreen {
+    .randomImagesSmScreen {
     display: none;
   }
-
   .clyncImage {
     width: 60rem;
   }
 
   .clyncImage img {
-    width: 70.86769rem;
-    height: 10.73rem;
+    width: 60.86769rem;
+    height: 20.73rem;
   }
-
-.clyncImage p {
+  .clyncImage p {
   width: 39.125rem;
   height: 4.4375rem;
   flex-shrink: 0;
@@ -156,4 +161,16 @@
   line-height: 1.375rem;
   letter-spacing: -0.02563rem;
 }
+}
+
+
+@media (min-width: 1480px) {
+  .clyncImage {
+    width: 90rem;
+  }
+
+  .clyncImage img {
+    width: 90.86769rem;
+    height: 20.73rem;
+  }
 }

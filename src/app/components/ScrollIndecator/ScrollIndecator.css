@@ -4,7 +4,8 @@
   display: block;
   width: 28px;
   position: absolute;
-  right: 5%;
+  right: 3%;
+  margin-top: 0%;
 }
 
 .mouse {
@@ -47,4 +48,14 @@ margin-left: -30%;
   .aniWrap {
     display: none;
   }
+}
+@media (min-width: 1480px) {
+.aniWrap {
+  margin: 40px auto;
+  display: block;
+  width: 28px;
+  position: absolute;
+  right: 3%;
+  margin-top: 10%;
+}
 }

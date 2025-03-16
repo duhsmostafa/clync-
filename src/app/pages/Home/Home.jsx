@@ -23,6 +23,7 @@ export default function Home() {
   const [lastImage, setLastImage] = useState(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [resetAnimation, setResetAnimation] = useState(false);
+  const [isFooterInView, setIsFooterInView] = useState(false);
 
   const handleClick = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -52,6 +53,12 @@ export default function Home() {
       const maxScroll = documentHeight - windowHeight;
       const progress = scrollY / maxScroll;
       setScrollProgress(progress);
+
+      if (progress >= 0.95) {
+        setIsFooterInView(true);
+      } else {
+        setIsFooterInView(false);
+      }
 
       if (scrollY === 0) {
         setResetAnimation(true);
@@ -108,9 +115,11 @@ export default function Home() {
         <Image className="nineAppear" src={img9} alt="nineAppear" />
         <Image className="tenAppear" src={img10} alt="tenAppear" />
       </div>
-      <div className="bottomImage">
-        <Image src={bottomImage} alt="Bottom Image" />
-      </div>
+      {!isFooterInView && (
+<div className={`bottomImage ${isFooterInView ? 'hidden' : ''}`}>
+  <Image src={bottomImage} alt="Bottom Image" />
+</div>
+      )}
     </div>
   );
 }

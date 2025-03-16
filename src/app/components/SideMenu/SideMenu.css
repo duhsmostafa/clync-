@@ -136,12 +136,12 @@ display: block;
 /* lg screens end */
 
 /* md screens start */
-/* @media only screen and (min-width: 769px) and (max-width: 1280px) {
-.side-menu{
-    background-color: red;
+@media only screen and (min-width: 769px) and (max-width: 1280px) {
+    .end-menu{
+    margin-top: 10%;
 }
-} */
-/* dm screens start */
+}
+/* dm screens start
 /* sm screens start */
 @media only screen and (max-width: 768px) {
     .left-content , .vertical-line{

@@ -19,7 +19,7 @@
 .takePart p {
     display: inline-block;
     padding-left: 100%;
-    animation: marquee 100s linear infinite;
+    animation: marquee 300s linear infinite;
 }
 
 @keyframes marquee {
@@ -238,7 +238,12 @@ transform: rotate(0deg);
     height: 2.51688rem;
     background: #FFF;
 }
-
+.copyRights{
+    display: none;
+}
+.waveMobile{
+    display: none;
+}
 @media screen and (max-width: 768px) {
     .takePart{
         color: #FFF;
@@ -255,7 +260,7 @@ text-transform: uppercase;
     }
     .wave{
         display: none;
-    }
+        }
     .clyncFooter{
         width: 15.10894rem;
 height: 1.90725rem;
@@ -280,7 +285,9 @@ margin-bottom: 10%;
 .rightContent {
     width: 90%;
 }
-
+.leftContent{
+    margin-top: 40%;
+}
 .form {
         display: flex;
         justify-content: center;
@@ -360,6 +367,30 @@ height: 6.01981rem;
 }
 .needHelp h3{
     margin: auto;
+}
+.copyRights{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.copyRights p {
+color: #CAC6DD;
+font-family: Montserrat;
+font-size: 0.75rem;
+font-style: normal;
+font-weight: 400;
+line-height: 160%; /* 1.2rem */
+}
+.waveMobile{
+    display: block;
+    position: absolute;
+    margin-top: 120%;
+}
+}
+@media (min-width: 360px) and (max-width: 380px) {
+.waveMobile{
+    margin-top: 135%;
+    transform: rotate(-5deg);
 }
 }
 @media (min-width: 1480px){
