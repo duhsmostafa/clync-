@@ -8,13 +8,13 @@ WORKDIR /usr/src/app
 COPY . /usr/src/app
 
 # Install app dependencies
-RUN yarn install
+RUN npm install
 
 # Build a production version
-RUN yarn build
+RUN npm run build
 
 # Expose the port the app runs on
 EXPOSE 3000
 
 # Run the app
-CMD ["yarn", "start"]
+CMD ["npm", "start"]
