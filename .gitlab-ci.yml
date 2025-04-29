@@ -78,7 +78,7 @@ deploy-dev:
     - ssh -o "StrictHostKeyChecking no" -i "gitlab-server.pem" ubuntu@ec2-34-242-133-82.eu-west-1.compute.amazonaws.com "aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin $DOCKER_REGISTRY"
     # Stop the old container
     - ssh  -o "StrictHostKeyChecking no" -i "gitlab-server.pem" ubuntu@ec2-34-242-133-82.eu-west-1.compute.amazonaws.com "docker stop ${APP_NAME}_container || true && docker rm ${APP_NAME}_container || true"
-    # Pull the new image
+    # Pull the new image from ECRrrrrrrrrrrrrrrrrr
     - ssh -o "StrictHostKeyChecking no" -i "gitlab-server.pem" ubuntu@ec2-34-242-133-82.eu-west-1.compute.amazonaws.com "docker pull $DOCKER_REGISTRY/$APP_NAME:${CI_PIPELINE_IID}"
     # Run the new container
     - ssh -o "StrictHostKeyChecking no" -i "gitlab-server.pem" ubuntu@ec2-34-242-133-82.eu-west-1.compute.amazonaws.com "docker run -d --name ${APP_NAME}_container -p 9010:3000 $DOCKER_REGISTRY/$APP_NAME:${CI_PIPELINE_IID}"
