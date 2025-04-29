@@ -907,9 +907,11 @@ height: 50.5rem;
  }
  .citChatDone{
   position: absolute;
-  top: 10%;
-  left: 5% !important;
+  top: 30%;
   background-color: red !important;
+  left: 5% !important;
+  width: 25%;
+  height: 40%;
 }
  .citChatDone p{
   position: absolute;
